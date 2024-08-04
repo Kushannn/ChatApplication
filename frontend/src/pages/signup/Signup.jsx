@@ -5,8 +5,8 @@ import useSignup from "../../hooks/useSignup";
 
 const Signup = () => {
   const [inputs, setInputs] = useState({
-    fullName: "",
-    userName: "",
+    fullname: "",
+    username: "",
     password: "",
     confirmPassword: "",
     gender: "",
@@ -40,9 +40,9 @@ const Signup = () => {
               type="text"
               placeholder="Enter Full Name"
               className="w-full input input-bordered input-secondary h-10"
-              value={inputs.fullName}
+              value={inputs.fullname}
               onChange={(e) =>
-                setInputs({ ...inputs, fullName: e.target.value })
+                setInputs({ ...inputs, fullname: e.target.value })
               }
             />
           </div>
@@ -55,9 +55,9 @@ const Signup = () => {
               type="text"
               placeholder="Enter username"
               className="w-full input input-bordered input-secondary h-10"
-              value={inputs.userName}
+              value={inputs.username}
               onChange={(e) =>
-                setInputs({ ...inputs, userName: e.target.value })
+                setInputs({ ...inputs, username: e.target.value })
               }
             />
           </div>
@@ -105,8 +105,15 @@ const Signup = () => {
           </Link>
 
           <div>
-            <button className="btn btn-outline btn-secondary btn-block btn-sm mt-2">
-              Singup
+            <button
+              className="btn btn-outline btn-secondary btn-block btn-sm mt-2"
+              disabled={loading}
+            >
+              {loading ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Signup"
+              )}
             </button>
           </div>
         </form>
