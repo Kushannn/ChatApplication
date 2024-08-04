@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAuthContext } from "../../context/AuthContext";
 import useConversation from "../../zustand/useConversation";
 import { extractTime } from "../../utils/extractTime";
 
 const Message = ({ message }) => {
   const { authUser } = useAuthContext();
-  const { selectedConversation } = useConversation();
+  const { selectedConversation, notifications, setNotifications } =
+    useConversation();
 
   const fromMe = message.senderId === authUser._id;
   const formattedTime = extractTime(message.createdAt);
@@ -14,6 +15,8 @@ const Message = ({ message }) => {
     ? authUser.profilePicture
     : selectedConversation?.profilePicture;
   const bubbleBgColor = fromMe ? "bg-purple-500" : "";
+
+  const shakeClass = message.shouldShake ? "shake" : "";
 
   return (
     <div className={`chat ${chatClassName}`}>
@@ -24,7 +27,7 @@ const Message = ({ message }) => {
         </div>
       </div>
       <div
-        className={`chat-bubble chat-bubble-secondary text-white ${bubbleBgColor}`}
+        className={`chat-bubble chat-bubble-secondary text-white ${bubbleBgColor} ${shakeClass}`}
       >
         {message.message}
       </div>
