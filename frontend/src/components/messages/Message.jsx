@@ -20,7 +20,6 @@ const Message = ({ message }) => {
 
   return (
     <div className={`chat ${chatClassName}`}>
-      {console.log(profilePic)}
       <div className="chat-image avatar">
         <div className="w-10 rounded-full">
           <img src={profilePic} alt="" />

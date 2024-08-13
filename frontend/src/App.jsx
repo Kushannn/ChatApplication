@@ -5,6 +5,7 @@ import Signup from "./pages/signup/Signup";
 import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/AuthContext";
 import Header from "./components/header/Header";
+import UserAccount from "./pages/user-account/UserAccount";
 
 function App() {
   const { authUser } = useAuthContext();
@@ -13,6 +14,7 @@ function App() {
       <div className="p-4 h-screen flex items-center justify-center">
         <Routes>
           <Route path="/" element={authUser ? <Home /> : <Login />} />
+          <Route path="/user-account" element={<UserAccount />} />
           <Route
             path="/login"
             element={authUser ? <Navigate to="/" /> : <Login />}
