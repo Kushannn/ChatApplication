@@ -17,3 +17,19 @@ export const getUsersForSidebar = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+// export const getSenderUsername = async (req, res) => {
+//   try {
+//     const senderId = req.params.id; // Access senderId from params
+//     const user = await User.findById(senderId).select("username"); // Select only the username field
+
+//     if (!user) {
+//       return res.status(404).json({ error: "User not found" });
+//     }
+
+//     res.status(200).json({ username: user.username });
+//   } catch (error) {
+//     console.log("Error in getSenderUsername in userController", error.message);
+//     res.status(500).json({ error: "Internal Server Error" });
+//   }
+// };

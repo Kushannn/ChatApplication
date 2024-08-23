@@ -5,5 +5,6 @@ import { getUsersForSidebar } from "../controllers/userController.js";
 const router = express.Router();
 
 router.get("/", protectRoute, getUsersForSidebar);
+// router.get("/", protectRoute, getSenderUsername);
 
 export default router;
