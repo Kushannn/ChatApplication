@@ -31,9 +31,12 @@ const Header = () => {
         </div>
       </div>
       <div className="navbar-center">
-        <p className="btn btn-ghost text-3xl text-white font-extrabold">
+        <a
+          href="/"
+          className="btn btn-ghost text-3xl text-white font-extrabold"
+        >
           Connecto
-        </p>
+        </a>
       </div>
       <div className="navbar-end ">
         {/* <button

@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <div>
         <Header />
-        <div className="flex w-screen sm:h-[450px] md:h-[91vh] rounded-lg overflow-hidden shadow-lg bg-gray-400 bg-gradient-to-r from-[#171E37] to-[#702A4E]">
+        <div className="flex w-screen sm:h-[90vh] md:h-[91vh] rounded-lg overflow-hidden shadow-lg bg-gray-400 bg-gradient-to-r from-[#171E37] to-[#702A4E]">
           <Sidebar />
           <MessageContainer />
         </div>
